@@ -1,6 +1,6 @@
 Android ViveLab's Repository
 ============================
-Android Teacher: Jonathan Valencia  
+Android Teacher: Jonathan Valencia Espitia
 
 LinkedIn: [Public Profile](http://www.linkedin.com/pub/jonathan-valencia-espitia/63/57b/849)
 
