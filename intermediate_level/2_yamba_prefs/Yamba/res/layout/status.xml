@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StatusActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/titleStatus"
+        android:textSize="30sp"
+        android:layout_margin="10dp"/>
+    
+    <TextView
+        android:id="@+id/TVCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/count"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+    
+    <EditText 
+        android:id="@+id/ETStatus"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="@string/hintText"
+        android:gravity="top|center_horizontal"
+        android:layout_weight="1"
+        android:maxLength="140"
+        android:background="#cfff"/>
+    
+    <Button 
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonUpdate"
+        android:textSize="20sp"/>
+
+</LinearLayout>

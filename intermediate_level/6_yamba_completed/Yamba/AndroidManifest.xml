@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vivelab.yamba"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="vivelab.yamba.SEND_TIMELINE_NOTIFICATIONS"/>
+    <uses-permission android:name="vivelab.yamba.RECEIVE_TIMELINE_NOTIFICATIONS"/>
+    
+    <!-- SEND Permission -->
+    <permission 
+        android:name="vivelab.yamba.SEND_TIMELINE_NOTIFICATIONS"
+        android:label="@string/send_timeline_notifications_label"
+        android:description="@string/send_timeline_notifications_description"
+        android:permissionGroup="android.permission-group.PERSONAL_INFO"
+        android:protectionLevel="normal"/>
+    
+    <!-- RECEIVE Permission -->
+    <permission 
+        android:name="vivelab.yamba.RECEIVE_TIMELINE_NOTIFICATIONS"
+        android:label="@string/receive_timeline_notifications_label"
+        android:description="@string/receive_timeline_notifications_description"
+        android:permissionGroup="android.permission-group.PERSONAL_INFO"
+        android:protectionLevel="normal"/>
+
+    <application
+        android:name=".YambaApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/yamba_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".TimelineActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PrefsActivity"
+            android:label="@string/titlePreferences" >
+        </activity>
+        <service
+            android:name=".UpdaterService" >
+        </service>
+        <activity
+            android:name=".StatusActivity"
+            android:label="@string/title_activity_timeline" >
+        </activity>
+        <receiver
+            android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".NetworkReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <provider 
+            android:name=".StatusProvider"
+            android:authorities="vivelab.yamba.statusprovider">
+        </provider>
+        <receiver 
+            android:name=".YambaWidget"
+            android:label="@string/lastTimelineUpdate">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="vivelab.yamba.NEW_STATUS"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/yamba_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>

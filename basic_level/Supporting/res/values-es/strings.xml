@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Soporte</string>
+    <string name="action_settings">configuración</string>
+    <string name="hello_world">Hola mundo!</string>
+    <string name="screen_size">Tamaño</string>
+	<string name="screen_density">Densidad</string>
+	<string name="test_str">val</string>
+	<string name="title">Parámetros de la Pantalla</string>
+	<string name="android_desc">Android</string>
+    
+</resources>
